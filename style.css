@@ -1,0 +1,65 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: Poppins, sans-serif; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #0a3643;
+}
+
+.pulse{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    box-shadow: inset 0 0 40px #12b9ff, 0 0 50px #12b9ff;
+    border-radius: 50%;
+    border: 1px solid #12b9ff;
+    background: url(images/Earth.png);
+    background-size: cover;
+    animation: animateEarth 20s linear infinite;
+}
+
+@keyframes animateEarth {
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 640px;
+    }
+}
+
+.pulse span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 1px solid #12b9ff;
+    border-radius: 50%;
+    animation: animate 6s linear infinite;
+    animation-delay: calc(var(--i) * -1s);
+}
+
+@keyframes animate {
+    0%{
+        width: 200px;
+        height: 200px;
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        width: 550px;
+        height: 550px;
+        opacity: 0;
+    }
+}
